@@ -19,6 +19,7 @@ class FlipbksController < ApplicationController
       name = "#{@book.user_id}-#{@book.id}-#{@book.name.gsub(/\s+/, "")}"
       orders = []
       
+      # TODO: Talk to Brandon
       if params[:order]
         params[:order].each do |o|
           p = o.split("-")
@@ -38,7 +39,8 @@ class FlipbksController < ApplicationController
           photo.save
         end
       end
-  
+      
+      # TODO: Sort w/ SQL not Ruby
       sorted = @book.photos.sort_by & :order
       sorted.each_with_index do |photo, index| 
         Dir.mkdir(dir) unless File.exists?(dir)
@@ -125,7 +127,7 @@ class FlipbksController < ApplicationController
     redirect_to(:users)
   end
 
-  # private
+  private
   
   def save_to_s3(book, dir, name)
     service = S3::Service.new(
