@@ -24,53 +24,7 @@
       </div>
       
       <div id="flipbook">
-        <div id="flipbook_all">
-          <ul id="flipbook_form" class="grid_12 alpha omega">
-            <%= form_for @book do |f| %>
-            <%= f.hidden_field :user_id %>
-    
-            <%= f.submit "Save flipbook", :class => "ctr_button2" %>
-
-            <li class="grid_2 push_2">
-              <%= f.text_field :name, :placeholder => "Name" %>
-            </li>
-  
-            <li class="grid_2 push_2">
-              <%= f.text_field :description, :placeholder => "Describe" %>
-            </li>
-  
-            <li class="grid_2 push_2">
-              <% spd = @book.speed || 200 %>
-              <%= f.text_field :speed , :placeholder => "How fast? (ms)" %>
-            </li>
-  
-            <li id="chkbox" class="grid_2 push_2">
-              <%= f.label "Make public?" %>
-              <%= f.check_box :public %>
-            </li>
-          </ul>
-  
-          <div id="insta_photos" class="grid_12 alpha omega">
-            <div id="photos">
-              <% User.find(session[:user_id]).photos.all.each do |p| %>
-                <div id="photos_new">
-                  <label for="<%= p.id %>">
-                    <%= image_tag(p.url, height: '140', width: '140') %>
-
-                    <%= check_box_tag('photos[]', p.id, (((p.flipbk_id == @book.id)&& p.flipbk_id != nil)? true : false), :id => "#{p.id}" ) %>
-
-                    <% p.order = p.order || 0 %>
-                    <%# text_field_tag "order[]", "#{p.id}-#{p.order}" , :size => 10 %>
-                  </label>
-                </div>
-              <% end %>
-            </div>
-          </div>
-  
-
-          <% end %> 
-
-        </div>
+        <%= render partial: "form", locals: {book: @book} %>
       </div>
   </div>
   

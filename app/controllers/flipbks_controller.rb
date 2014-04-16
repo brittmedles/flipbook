@@ -125,7 +125,7 @@ class FlipbksController < ApplicationController
     redirect_to(:users)
   end
 
-  private
+  # private
   
   def save_to_s3(book, dir, name)
     service = S3::Service.new(

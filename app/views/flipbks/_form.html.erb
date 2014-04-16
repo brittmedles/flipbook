@@ -14,7 +14,7 @@
     </li>
   
     <li class="grid_2 push_2">
-      <% spd = @book.speed || 200 %>
+      <% spd = book.speed || 200 %>
       <%= f.text_field :speed , :placeholder => "How fast? (ms)" %>
     </li>
   
@@ -31,10 +31,10 @@
           <label for="<%= p.id %>">
             <%= image_tag(p.url, height: '140', width: '140') %>
 
-            <%= check_box_tag('photos[]', p.id, (((p.flipbk_id == @book.id)&& p.flipbk_id != nil)? true : false), :id => "#{p.id}" ) %>
+            <%= check_box_tag('photos[]', p.id, (((p.flipbk_id == book.id)&& p.flipbk_id != nil)? true : false), :id => "#{p.id}" ) %>
 
             <% p.order = p.order || 0 %>
-            <%# text_field_tag "order[]", "#{p.id}-#{p.order}" , :size => 10 %>
+            
           </label>
         </div>
       <% end %>
