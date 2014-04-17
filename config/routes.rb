@@ -5,7 +5,7 @@ Flipbook::Application.routes.draw do
    # get '/oauth/connect' => 'users#connect', :as => :connect
    # get '/oauth/callback' => 'users#callback', :as => :callback
    
-   get "dropbox/client_chk" => 'dropbox#client_chk', :as => :dbcheck
+   # get "dropbox/client_chk" => 'dropbox#client_chk', :as => :dbcheck
    get "dropbox/auth_start" => 'dropbox#auth_start', :as => :dbstart
    get "dropbox/auth_finish" => 'dropbox#auth_finish', :as => :dbfinish
    

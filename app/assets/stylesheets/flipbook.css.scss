@@ -6,11 +6,6 @@
   margin-bottom: 24px;
 }
 
-#flipbook_all{
-  height: 175px;
-  background: #E74C3C;
-}
-
 .ctr_button2{
   display: block;
   margin: 0 auto;
@@ -23,6 +18,16 @@
   font-weight: bold;
   font-size: 24px;
   cursor: pointer;
+}
+
+#flipbook_form{
+  height: 192px;
+  background: #E74C3C;
+}
+
+#flipbook_form ul{
+  margin: 0 auto;
+  text-align: center;
 }
 
 #flipbook_form li{
@@ -51,6 +56,8 @@
 
 #insta_photos{
   background: #FFF;
+  min-height: 1000px;
+  margin-top: 15px;
 }
 
 #photos{
@@ -95,10 +102,6 @@
   height: 700px;
   margin-bottom: 100px;
   background: #E74C3C;
-}
-
-#flipbook_form{
-  height: 150px;
 }
 
 #fb_show img{

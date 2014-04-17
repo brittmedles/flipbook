@@ -1,28 +1,48 @@
 <div id="flipbook_all">
-  <ul id="flipbook_form" class="grid_12 alpha omega">
-    <%= form_for book do |f| %>
-    <%= f.hidden_field :user_id %>
+  <%= form_for book do |f| %>
+    <div id="flipbook_form" class="grid_12 alpha omega">
     
-    <%= f.submit "Save flipbook", :class => "ctr_button2" %>
+    <ul>
+      <%= f.hidden_field :user_id %>
+      <%= f.submit "Start a flipbook", :class => "ctr_button2" %>
 
-    <li class="grid_2 push_2">
-      <%= f.text_field :name, :placeholder => "Name" %>
-    </li>
+      <li>
+        <%= f.text_field :name, :placeholder => "Name" %>
+      </li>
   
-    <li class="grid_2 push_2">
-      <%= f.text_field :description, :placeholder => "Describe" %>
-    </li>
+      <li>
+        <%= f.text_field :description, :placeholder => "Describe" %>
+      </li>
   
-    <li class="grid_2 push_2">
-      <% spd = book.speed || 200 %>
-      <%= f.text_field :speed , :placeholder => "How fast? (ms)" %>
-    </li>
+      <li>
+        <% spd = book.speed || 200 %>
+        <%= f.text_field :speed , :placeholder => "How fast? (ms)" %>
+      </li>
   
-    <li id="chkbox" class="grid_2 push_2">
-      <%= f.label "Make public?" %>
-      <%= f.check_box :public %>
-    </li>
-  </ul>
+      <li>
+        <%= f.label "Make public?" %>
+        <%= f.check_box :public %>
+      </li>
+    </ul>
+  </div>
+  <!-- contents, metadata = client.get_file_and_metadata('/magnum-opus.txt')
+  open('magnum-opus.txt', 'w') {|f| f.puts contents }
+  
+  # Upload the POST'd file to Dropbox, keeping the same name
+              resp = client.put_file(params[:file].original_filename, params[:file].read)
+              render :text => "Upload successful.  File now at #{resp['path']}"
+  
+  <div id="dropbox_photos" class="grid_12 alpha omega">
+  
+  
+  
+    <%= button_to "Add Photo", user_url(current_user.id), :method => :get, :class => "ctr_button" %>
+  
+  
+  
+  
+  </div> -->
+  
   
   <div id="insta_photos" class="grid_12 alpha omega">
     <div id="photos">

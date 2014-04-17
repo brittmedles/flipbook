@@ -4,31 +4,6 @@
 
 <div id="container" class="container_12">
   
-  <div id="nav" class="grid_12 alpha omega">
-      <div id="social" class="grid_4 alpha">
-          <div id="flip_icon">
-            <%= link_to :root do %>
-              <%= image_tag "flipbook60.jpg" %>
-            <% end %>
-          </div>
-          
-          <div id="avatar">
-            <%= gravatar_tag User.find(session[:user_id]), :size => 60 %>
-          </div>
-      </div>
-    
-      <div id="links" class="grid_4 omega push_4">
-        <% if current_user %>
-          <%= link_to("Log Out", login_path(current_user.id), :method => :delete) %>
-          <%= link_to("Profile", user_url(current_user.id)) %> 
-        <% else %>
-
-        <%= link_to("Log In", :new_login) %>
-
-        <% end %>
-      </div>
-  </div>
-  
   <div id="profile_banner" class="grid_12 alpha omega">
       <div id="name" class="center">
         <%= current_user.name %>
@@ -41,57 +16,17 @@
       </div>
       
       <div id="fb_menu">
-      
-        <!-- <%= button_to "Preview flipbook", :flipbks, :method => :get, :class => "ctr_button" %> -->
         
         <%= button_to "Your flipbooks", user_url(current_user.id), :method => :get, :class => "ctr_button" %>
                     
       </div>
-      
-      <div id="flipbook">
-        <%= render partial: "form", locals: {book: @book} %>
-      </div>
+  </div>
+  
+  <div id="flipbook">
+    <%= render partial: "form", locals: {book: @book} %>
   </div>
   
   <div class="push"></div>
- 
-  <div id="footer" class="grid_12 alpha omega">
-      <!-- <div id="nav_icon" class="grid_4 alpha"></div> -->
-      
-      <div id="foot_signup">
-        
-        <div id="foot_links" class="grid_4 push_8">
-          <div class="foot_buttons">
-            <div id="fb-root"></div>
-            <div id="social_icon3">
-              <a href="#" class="tumblr_icon"></a>
-            </div>
-            <div id="social_icon2">
-              <a href="#" class="twitter_icon"></a>
-            </div>
-            <div id="social_icon1">
-              <a href="#" class="facebook_icon"></a>
-            </div>
-        
-            <div id="flip_icon">
-              <%= link_to :root do %>
-                <%= image_tag "flipbook60.jpg" %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-        
-        <!-- <div id="signup" class="grid_4 alpha prefix_4">
-          <button type="button" class="ctr_button">Sign Up</button>
-        </div> -->
-
-      </div>
-      
-      <div id="credits" class="grid_12 alpha omega">
-        © 2014 flipbook, Inc. • Proudly built on the Silicon Prairie • Terms of service • Privacy Policy
-      </div>
-    
-  </div>
         
 </div>
 

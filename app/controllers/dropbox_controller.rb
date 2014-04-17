@@ -37,7 +37,7 @@ class DropboxController < ApplicationController
         begin
             access_token, user_id, url_state = get_web_auth.finish(params)
             session[:access_token] = access_token
-            redirect_to(user_url(current_user.id))
+            redirect_to(:new_flipbk)
         end
     end
 end
