@@ -46,7 +46,8 @@ gem 'debugger'
 
 gem 'gravatarify', '~> 3.0.0'
 
-gem 'instagram'
+gem 'dropbox-sdk'
+# gem 'instagram'
 gem 'dotenv'
 
 gem 'carrierwave'
