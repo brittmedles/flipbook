@@ -15,14 +15,6 @@
         share what you make
       </div>
       
-      <div id="fb_menu">
-      
-        <!-- <%= button_to "Preview flipbook", :flipbks, :method => :get, :class => "ctr_button" %> -->
-        
-        <%= button_to "Your flipbooks", user_url(current_user.id), :method => :get, :class => "ctr_button" %>
-                    
-      </div>
-      
       <div id="flipbook">
         <%= render partial: "form", locals: {book: @book} %>
       </div>

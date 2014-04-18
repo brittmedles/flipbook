@@ -6,22 +6,12 @@
   margin-bottom: 24px;
 }
 
-.ctr_button2{
-  display: block;
-  margin: 0 auto;
-  border: none;
-  height: 60px;
-  width: 300px;
-  background: #3498DB;
-  color: #2C3E50;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: 24px;
-  cursor: pointer;
+#flipbook{
+  height: 200px;
 }
 
 #flipbook_form{
-  height: 192px;
+  height: 60px;
   background: #E74C3C;
 }
 
@@ -33,8 +23,7 @@
 #flipbook_form li{
   display: inline-block;
   list-style: none;
-  margin-top: 25px;
-  margin-bottom: 10px;
+  margin-top: 13px;
   margin-left: 5px;
 }
 
@@ -54,9 +43,8 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#insta_photos{
+#dropbox_photos{
   background: #FFF;
-  min-height: 1000px;
   margin-top: 15px;
 }
 

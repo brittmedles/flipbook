@@ -2,49 +2,54 @@
   <%= form_for book do |f| %>
     <div id="flipbook_form" class="grid_12 alpha omega">
     
-    <ul>
-      <%= f.hidden_field :user_id %>
-      <%= f.submit "Start a flipbook", :class => "ctr_button2" %>
+      <ul>
+        <%= f.hidden_field :user_id %>
 
-      <li>
-        <%= f.text_field :name, :placeholder => "Name" %>
-      </li>
+        <li>
+          <%= f.text_field :name, :placeholder => "Name" %>
+        </li>
   
-      <li>
-        <%= f.text_field :description, :placeholder => "Describe" %>
-      </li>
+        <li>
+          <%= f.text_field :description, :placeholder => "Describe" %>
+        </li>
   
-      <li>
-        <% spd = book.speed || 200 %>
-        <%= f.text_field :speed , :placeholder => "How fast? (ms)" %>
-      </li>
+        <li>
+          <% spd = book.speed || 200 %>
+          <%= f.text_field :speed , :placeholder => "How fast? (200)" %>
+        </li>
   
-      <li>
-        <%= f.label "Make public?" %>
-        <%= f.check_box :public %>
-      </li>
-    </ul>
-  </div>
+        <li>
+          <%= f.text_field :public, :placeholder => "Yes or no?" %>
+          <!-- <%= f.label "Make public?" %>
+          <%= f.check_box :public %> -->
+        </li>
+      
+        <div id="signup_button" class="grid_12 alpha omega">
+        <%= f.submit "Start a flipbook", :class => "ctr_button" %>
+        </div>
+      
+      </ul>
+    </div>
+  <% end %> 
+</div>
+  
+<div id="dropbox_photos" class="grid_12 alpha omega">
+  
+</div>
+  
+  
   <!-- contents, metadata = client.get_file_and_metadata('/magnum-opus.txt')
   open('magnum-opus.txt', 'w') {|f| f.puts contents }
   
   # Upload the POST'd file to Dropbox, keeping the same name
               resp = client.put_file(params[:file].original_filename, params[:file].read)
               render :text => "Upload successful.  File now at #{resp['path']}"
-  
-  <div id="dropbox_photos" class="grid_12 alpha omega">
-  
-  
-  
     <%= button_to "Add Photo", user_url(current_user.id), :method => :get, :class => "ctr_button" %>
   
   
   
   
-  </div> -->
-  
-  
-  <div id="insta_photos" class="grid_12 alpha omega">
+  <! <div id="insta_photos" class="grid_12 alpha omega">
     <div id="photos">
       <% User.find(session[:user_id]).photos.all.each do |p| %>
         <div id="photos_new">
@@ -60,11 +65,11 @@
       <% end %>
     </div>
   </div>
+   -->
+
   
 
-  <% end %> 
 
-</div>
 
 
      

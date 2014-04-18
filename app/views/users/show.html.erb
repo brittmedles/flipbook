@@ -15,12 +15,25 @@
         share what you make
       </div>
       
-      <div id="menu">
-        <%= button_to "Make a flipbook", :new_flipbk, :method => :get, :class => "ctr_button" %>         
+      <div id="flipbook">
+        <%= render partial: "flipbks/form", locals: {book: @book} %>
       </div>
   </div>
   
+  <div id="buffer2" class="grid_12 alpha omega">
+      <% if @user.flipbks == true %>
+      <div id="buff_text2">
+        YOUR FLIPBOOKS
+      </div>
+      <% else %>
+      <div id="buff_text2">
+        YOU NEED SOME FLIPBOOKS
+      </div>
+      <% end %>
+  </div>
+  
   <div id="profile_flipbooks" class="grid_12 alpha omega">
+    
       <div id="fbs_all">
         <ul>
           <% @user.flipbks.each do |book| %>

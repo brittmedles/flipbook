@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(session[:user_id])
+    @book = Flipbk.new
     
     if params[:id].to_s == session[:user_id].to_s
     else
