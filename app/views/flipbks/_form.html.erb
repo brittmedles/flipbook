@@ -23,10 +23,17 @@
           <!-- <%= f.label "Make public?" %>
           <%= f.check_box :public %> -->
         </li>
-      
-        <div id="signup_button" class="grid_12 alpha omega">
-        <%= f.submit "Start a flipbook", :class => "ctr_button" %>
-        </div>
+        
+        
+        <% if (params[:action] == 'edit') %>
+          <div id="main_button" class="grid_12 alpha omega">
+            <%= f.submit "Save flipbook", :class => "ctr_button" %>
+          </div>
+        <% else %>
+          <div id="main_button" class="grid_12 alpha omega">
+            <%= f.submit "Start a flipbook", :class => "ctr_button" %>
+          </div> 
+        <% end %>
       
       </ul>
     </div>
