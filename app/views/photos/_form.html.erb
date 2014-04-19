@@ -1,0 +1,1 @@
+"#{account_info['email']} <br/><%= form_tag({:controller => :photos, :action => :create}, :multipart => true) do %><%= file_field_tag 'file' %><%= submit_tag 'Upload' %><% end %>"
