@@ -40,6 +40,7 @@ class FlipbksController < ApplicationController
   def edit
     @user = User.find(session[:user_id])
     @book = Flipbk.find(params[:id])
+    @photo = Photo.find_by_flipbk_id(params[:flipbk_id])
   end
 
   def update

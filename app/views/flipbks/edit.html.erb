@@ -21,11 +21,26 @@
   </div>
   
   <div id="buffer2" class="grid_12 alpha omega">
-      
+      <% if @photo == true %>
       <div id="buff_text2">
-        YOUR FLIPBOOKS
+        FLIPBOOK PHOTOS
       </div>
-      
+      <% else %>
+      <div id="buff_text2">
+        ADD PHOTOS TO YOUR FLIPBOOK
+      </div>
+      <% end %>
+  </div>
+  
+  <div id="main_button" class="grid_12 alpha omega">
+    <%= render partial: "photos/form" %>
+  </div>
+  
+  
+  <div id="dropbox_photos" class="grid_12 alpha omega">
+    
+  
+  
   </div>
   
   <div class="push"></div>
