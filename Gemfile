@@ -51,10 +51,8 @@ gem 'dropbox-sdk'
 gem 'dotenv'
 
 gem 'carrierwave'
-gem 'rmagick'
 gem 'fog'
-gem 'carrierwave_direct'
-gem 'sidekiq'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'database_cleaner'

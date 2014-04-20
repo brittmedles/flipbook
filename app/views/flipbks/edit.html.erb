@@ -27,28 +27,21 @@
       </div>
       <% else %>
       <div id="buff_text2">
-        ADD PHOTOS TO YOUR FLIPBOOK
+        Add photos to <%= @book.name %>
       </div>
       <% end %>
   </div>
   
   <div id="uploader" class="grid_12 alpha omega">
     
-    <!-- This should be the button connecting to Dropbox. -->
     
-    <%= direct_upload_form_for @uploader do |f| %>
-    
-      <%= f.file_field :image %>
-      <%= f.submit %>
-      
-    <% end %>
     
   </div>
   
   <div class="clear"></div>
   
   <div id="dropbox_photos" class="grid_12 alpha omega">
-    <%= render @photos %>
+   
   </div>
   
   <div class="push"></div>

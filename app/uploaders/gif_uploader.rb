@@ -2,18 +2,13 @@
 
 class GifUploader < CarrierWave::Uploader::Base
   
-  include CarrierWaveDirect::Uploader
-  
   # Include RMagick or MiniMagick support:
-  include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  # include CarrierWave::RMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   # storage :file
-  # storage :fog
-  
-  include CarrierWave::MimeTypes
-  process :set_content_type
+  storage :fog
   
   # Create different versions of your uploaded files:
   version :thumb do

@@ -30,7 +30,7 @@
           </div>
         <% else %>
           <div id="main_button" class="grid_12 alpha omega">
-            <%= f.submit "Start a flipbook", :class => "ctr_button" %>
+            <%= f.submit "Start a flipbook", :controller => :flipbks, :action => :create, :class => "ctr_button" %>
           </div> 
         <% end %>
       

@@ -4,6 +4,23 @@ class FlipbksController < ApplicationController
     @user = User.find(session[:user_id])
   end
   
+  def show
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+    end
+    
+    @book = Flipbk.find(params[:id])
+    
+    if @book.public?
+      
+    else
+      if current_user && @book.user.id == current_user.id
+      else
+      redirect_to(:root)
+      end
+    end
+  end
+  
   def new
     @user = User.find(session[:user_id])
     @book = Flipbk.new
@@ -22,33 +39,19 @@ class FlipbksController < ApplicationController
     @user = User.find(session[:user_id])
     @book = Flipbk.find(params[:id])
     @photos = Photo.where(params[:flipbk_id])
-    
-    @uploader = Photo.new.image
-    @uploader.success_action_redirect = edit_flipbk_path(@book.id) 
+
   end
 
   def update
+    @user = User.find(session[:user_id])
     @book = Flipbk.find(params[:id])
     @book.update_attributes(params[:flipbk])
     @book.user_id = session[:user_id]
+    
+    redirect_to(user_url_path(@user.id))
   end
   
-  def show
-    if session[:user_id]
-      @user = User.find(session[:user_id])
-    end
-    
-    @book = Flipbk.find(params[:id])
-    
-    if @book.public?
-      
-    else
-      if current_user && @book.user.id == current_user.id
-      else
-      redirect_to(:root)
-      end
-    end
-  end
+  
 
   def destroy
     book = Flipbk.find(params[:id])
