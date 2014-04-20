@@ -51,10 +51,10 @@ gem 'dropbox-sdk'
 gem 'dotenv'
 
 gem 'carrierwave'
+gem 'rmagick'
 gem 'fog'
-gem 'aws-sdk'
-gem 'aws-s3'
-gem 's3'
+gem 'carrierwave_direct'
+gem 'sidekiq'
 
 group :development, :test do
   gem 'database_cleaner'

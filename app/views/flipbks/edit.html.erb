@@ -21,7 +21,7 @@
   </div>
   
   <div id="buffer2" class="grid_12 alpha omega">
-      <% if @photo == true %>
+      <% if @photos == true %>
       <div id="buff_text2">
         FLIPBOOK PHOTOS
       </div>
@@ -32,15 +32,23 @@
       <% end %>
   </div>
   
-  <div id="main_button" class="grid_12 alpha omega">
-    <%= render partial: "photos/form" %>
+  <div id="uploader" class="grid_12 alpha omega">
+    
+    <!-- This should be the button connecting to Dropbox. -->
+    
+    <%= direct_upload_form_for @uploader do |f| %>
+    
+      <%= f.file_field :image %>
+      <%= f.submit %>
+      
+    <% end %>
+    
   </div>
   
+  <div class="clear"></div>
   
   <div id="dropbox_photos" class="grid_12 alpha omega">
-    
-  
-  
+    <%= render @photos %>
   </div>
   
   <div class="push"></div>

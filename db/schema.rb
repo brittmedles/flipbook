@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140419160410) do
+ActiveRecord::Schema.define(:version => 20140419172627) do
 
   create_table "flipbks", :force => true do |t|
     t.integer  "user_id"
@@ -33,10 +33,11 @@ ActiveRecord::Schema.define(:version => 20140419160410) do
     t.integer  "flipbk_id"
     t.string   "image"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.integer  "user_id"
     t.integer  "order"
+    t.boolean  "image_processed"
   end
 
   create_table "users", :force => true do |t|

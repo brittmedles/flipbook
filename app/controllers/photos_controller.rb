@@ -34,39 +34,50 @@ class PhotosController < ApplicationController
   end
   
   # Starts authorization check to add a new photo from Dropbox.
-  def new
-      client = get_dropbox_client
-      unless client
-          redirect_to(:action => 'auth_start') and return
-      end
-
-      account_info = client.account_info
+  # def new
+  #     client = get_dropbox_client
+  #     unless client
+  #         redirect_to(:action => 'auth_start') and return
+  #     end
+  #     account_info = client.account_info
+  #     
+  #     @photo = Photo.new(key: params(:key))  
+  # end
+  # 
+  # 
+  # def create
+  #     client = get_dropbox_client
+  #     unless client
+  #         redirect_to(:action => 'auth_start') and return
+  #     end
+  # 
+  #     begin
+  #         @book = Flipbk.find(params[:id])
+  #         
+  #         # Download a file from Dropbox
+  #         @uploader = client.get_file_and_metadata(params[:image])
+  #         photo = Photo.create(:image => @uploader, :user_id => session[:user_id])
+  #         
+  #         @uploader.success_action_redirect = edit_flipbk_path(@book.id)
+  #         
+  #     rescue DropboxAuthError => e
+  #         session.delete(:access_token)  # An auth error means the access token is probably bad
+  #         logger.info "Dropbox auth error: #{e}"
+  #         render :text => "Dropbox auth error"
+  #     rescue DropboxError => e
+  #         logger.info "Dropbox API error: #{e}"
+  #         render :text => "Dropbox API error"
+  #     end
+  # end
+  
+  def index
+    @photos = Photo.all
+    @uploader = Photo.new.image
+    @uploader.success_action_redirect = new_photo_url
   end
-  
-  
-  def create
-      client = get_dropbox_client
-      unless client
-          redirect_to(:action => 'auth_start') and return
-      end
 
-      begin
-          # Download a file from Dropbox
-          dbphoto = client.get_file_and_metadata(params[:dbphoto])
-          photo = Photo.create(:dbphoto => dbphoto, :user_id => session[:user_id])
-          
-          open('magnum-opus.txt', 'w') {|f| f.puts contents }
-          
-          resp = client.get_file(params[:file].original_filename, params[:file].read)
-          render :text => "Upload successful.  File now at #{resp['path']}"
-      rescue DropboxAuthError => e
-          session.delete(:access_token)  # An auth error means the access token is probably bad
-          logger.info "Dropbox auth error: #{e}"
-          render :text => "Dropbox auth error"
-      rescue DropboxError => e
-          logger.info "Dropbox API error: #{e}"
-          render :text => "Dropbox API error"
-      end
+  def new
+    @photo = Photo.new(key: params[:key])
   end
   
   
