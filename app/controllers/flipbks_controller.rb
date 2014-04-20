@@ -21,9 +21,9 @@ class FlipbksController < ApplicationController
   def edit
     @user = User.find(session[:user_id])
     @book = Flipbk.find(params[:id])
-    @photos = Photo.where_flipbk_id(params[:flipbk_id])
+    @photos = Photo.where(params[:flipbk_id])
     
-    @uploader = Photo.new.image(:user_id => session[:user_id], :flipbk_id => @book.id)
+    @uploader = Photo.new.image
     @uploader.success_action_redirect = edit_flipbk_path(@book.id) 
   end
 
