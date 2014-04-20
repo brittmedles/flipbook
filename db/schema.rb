@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140419172627) do
+ActiveRecord::Schema.define(:version => 20140420013857) do
 
   create_table "flipbks", :force => true do |t|
     t.integer  "user_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20140419172627) do
     t.integer  "user_id"
     t.integer  "order"
     t.boolean  "image_processed"
+    t.string   "name"
   end
 
   create_table "users", :force => true do |t|
