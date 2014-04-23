@@ -39,7 +39,7 @@ class FlipbksController < ApplicationController
     @user = User.find(session[:user_id])
     @book = Flipbk.find(params[:id])
     @photos = Photo.where(params[:flipbk_id])
-
+    # @client = get_dropbox_client
   end
 
   def update

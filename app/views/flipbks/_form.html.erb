@@ -26,7 +26,7 @@
         
         <% if (params[:action] == 'edit') %>
           <div id="main_button" class="grid_12 alpha omega">
-            <%= f.submit "Save flipbook", :class => "ctr_button" %>
+            <%= f.submit "Save flipbook", :controller => :flipbks, :action => :show, :class => "ctr_button" %>
           </div>
         <% else %>
           <div id="main_button" class="grid_12 alpha omega">

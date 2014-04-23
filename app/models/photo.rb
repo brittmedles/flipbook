@@ -1,7 +1,7 @@
 class Photo < ActiveRecord::Base
-  attr_accessible :description, :flipbk_id, :image, :user_id, :order
+  attr_accessible :description, :flipbk_id, :photo, :user_id, :order
   
-  mount_uploader :image, ImageUploader
+  mount_uploader :photo, PhotoUploader
   
   belongs_to :flipbk
   belongs_to :user
