@@ -32,14 +32,13 @@ class FlipbksController < ApplicationController
     @book.user_id = session[:user_id]
     
     @book.save
-    redirect_to(edit_flipbk_path(@book.id))
+    redirect_to(user_path(@user.id))
   end
   
   def edit
     @user = User.find(session[:user_id])
     @book = Flipbk.find(params[:id])
     @photos = Photo.where(params[:flipbk_id])
-    # @client = get_dropbox_client
   end
 
   def update
@@ -50,9 +49,7 @@ class FlipbksController < ApplicationController
     
     redirect_to(user_url_path(@user.id))
   end
-  
-  
-
+    
   def destroy
     book = Flipbk.find(params[:id])
     

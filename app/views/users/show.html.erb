@@ -21,30 +21,32 @@
   </div>
   
   <div id="buffer2" class="grid_12 alpha omega">
-      <% if @user.flipbks == true %>
-      <div id="buff_text2">
-        YOUR FLIPBOOKS
-      </div>
+      <% if !@user.flipbks.all.empty? %>
+        <div id="buff_text2">
+          YOUR FLIPBOOKS
+        </div>
       <% else %>
-      <div id="buff_text2">
-        YOU NEED SOME FLIPBOOKS
-      </div>
+        <div id="buff_text2">
+          YOU NEED SOME FLIPBOOKS
+        </div>
       <% end %>
   </div>
   
   <div id="profile_flipbooks" class="grid_12 alpha omega">
     
-    
-      <!-- Add a conditional here to show a placeholder for flipbooks w/out photos. -->
-    
-    
       <div id="fbs_all">
         <ul>
           <% @user.flipbks.each do |book| %>
         <li>
-          <% book.delete if book.photos.all.empty? %>
-          <%= link_to book.name, flipbk_path(book.id) %>
-          <%= link_to(image_tag(book.photos.all.first.url,:alt => book.name, :size => "300x300"), flipbk_path(book.id)) if !(book.photos.all.empty?) %>
+          <% if book.photos.all.empty? %>
+            <%= link_to flipbk_path(book.id) do %>
+              <%= image_tag "placeholder.jpg" %>
+            <% end %>
+          <% else %>
+            <%= link_to flipbk_path(book.id) do %>
+              <%= image_tag book.photos.all.first.url %>
+            <% end %>
+          <% end %>
         </li>
           <% end %>
         </ul>

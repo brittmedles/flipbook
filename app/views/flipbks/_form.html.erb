@@ -19,9 +19,8 @@
         </li>
   
         <li>
-          <%= f.text_field :public, :placeholder => "Yes or no?" %>
-          <!-- <%= f.label "Make public?" %>
-          <%= f.check_box :public %> -->
+          <%= f.label "Make public?" %>
+          <%= f.check_box :public %>
         </li>
         
         <% if (params[:action] == 'edit') %>
