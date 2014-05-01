@@ -14,7 +14,7 @@ Flipbook::Application.routes.draw do
    # To visualize grid structure.
    get '/grid/' => 'public#grid'
    
-   root :to => 'public#index'
+   root :to => 'public#index', layout: "homepage"
 
 end
 
