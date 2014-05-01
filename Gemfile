@@ -46,15 +46,12 @@ gem 'debugger'
 
 gem 'gravatarify', '~> 3.0.0'
 
-gem 'dropbox-sdk'
-# gem 'instagram'
-gem 'dotenv'
-
 gem 'carrierwave'
 gem 'fog'
 gem 'mini_magick'
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'capybara'
