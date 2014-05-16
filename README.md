@@ -1,4 +1,4 @@
-flipbookV3.
+flipbookV2.
 ========
 
 flipbook. Animate your Instagram photos.
