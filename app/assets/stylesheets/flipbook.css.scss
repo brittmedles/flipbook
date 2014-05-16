@@ -1,0 +1,137 @@
+/* `Make a flipbook
+----------------------------------------------------------------------------------------------------*/
+
+#fb_menu{
+  height: 60px;
+  margin-bottom: 24px;
+}
+
+#flipbook{
+  height: 200px;
+}
+
+#flipbook_form{
+  height: 60px;
+  background: #E74C3C;
+}
+
+#flipbook_form ul{
+  margin: 0 auto;
+  text-align: center;
+}
+
+#flipbook_form li{
+  display: inline-block;
+  list-style: none;
+  margin-top: 13px;
+  margin-left: 5px;
+}
+
+#flipbook_form input[type="text"]{
+  border: none;
+  width: 90%;
+  height: 30px;
+  font-size: 18px;
+  color: gray;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 5px;
+}
+
+#flipbook_form label{
+  font-size: 18px;
+  color: #FFF;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#dropbox_photos{
+  background: #FFF;
+  margin-top: 15px;
+}
+
+#photos{
+  width: 1400px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#photos_new{
+  width: 200px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  background: #FFF;
+  float: left;
+  padding-top: 15px;
+}
+
+/* `Show flipbook
+----------------------------------------------------------------------------------------------------*/
+
+#nav2{
+  background: #34495E;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+#links2{
+  height: 60px;
+}
+
+#links2 a{
+  float: right;
+  line-height: 60px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  margin-right: 37px;
+  color: #E74C3C;
+}
+
+#flipbook_back{
+  height: 700px;
+  margin-bottom: 100px;
+  background: #E74C3C;
+}
+
+#fb_show img{
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+#settings{
+  float: right;
+  padding: 0;
+}
+
+#settings{
+  margin-bottom: 0px;
+}
+
+#settings li{
+  display: inline-block;
+  margin-left: 0px;
+}
+
+.fb_button{
+  display: block;
+  margin: 0;
+  border: none;
+  height: 60px;
+  width: 100px;
+  background: #3498DB;
+  color: #2C3E50;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#fb_description{
+  margin: auto;
+}
+
+
+
+
+
+

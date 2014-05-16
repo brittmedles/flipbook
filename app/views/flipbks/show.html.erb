@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="container" class="container_12">
+  
+  <div id="nav2" class="grid_12 alpha omega">
+  
+      <div id="fb_topbar" class"grid_6">
+        <ul id="settings">
+          <% if current_user && current_user.id == @book.user_id %>
+  
+          <li><%= button_to "Edit", "/flipbks/#{@book.id}/edit", :method => :get, :class => "fb_button" %></li>
+
+          <li><%= button_to "Delete", flipbk_path("delete/#{@book.id}"), method: :delete, :class => "fb_button" %></li>
+
+          <% else %>
+
+          <% end %>
+        </ul>
+      </div>
+  </div>
+  
+  <div id="flipbook_sq" class="grid_12 alpha omega">
+    <div id="flipbook_back" class="grid_6 push_3">
+      
+      
+      <div class="grid_12 alpha omega">
+      <div id="name" class="center">
+        <%= @book.name %>
+      </div>
+      
+      <div class="separator"></div>
+      
+      <div id="tagline" class="center">
+        <%= @book.description %>
+      </div>
+      
+      <div id="fb_show">
+
+        <%= image_tag(@book.flipbk_url, height: '450', width: '450') %>
+        
+      </div>
+  </div>
+
+</div>
+
+</body>
+</html>

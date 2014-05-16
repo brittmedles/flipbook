@@ -1,0 +1,152 @@
+//Colors:
+//WET ASPHALT #34495E (NAVY)
+//MIDNIGHT BLUE #2C3E50 (DK NAVY)
+//PETER RIVER #3498DB (LT BLUE)
+//BELIZE HOLE #2980B9 (DK BLUE)
+//CLOUDS #ECF0F1 (GREY)
+//SILVER #BDC3C7 (DKR GREY)
+//CONCRETE #95A5A6 (DK GREY)
+//ALIZARIN #E74C3C (LT RED)
+
+html, body, #container{
+  height: 100%;
+  margin: 0 auto;
+}
+
+#container{ 
+  min-height: auto !important;
+  height: 100%; 
+}
+
+#nav{
+  background: #34495E;
+  height: 60px;
+}
+
+/* `Logo and social media icons (font awesome)
+----------------------------------------------------------------------------------------------------*/
+
+#flip_icon{
+  float: left;
+  width: 60px;
+  height: 60px;
+}
+
+#social_icon1{
+  float: left;
+  width: 60px;
+  height: 60px;
+  background: #2C3E50;
+}
+
+.facebook_icon {
+    position: relative;
+}
+ 
+.facebook_icon:before {
+    content: "\f09a"; 
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+/*--adjust as necessary--*/
+    color: #3498DB;
+    font-size: 28px;
+    padding-left: 23px;
+    position: absolute;
+    top: 9px;
+    left: 0;
+}
+
+#social_icon2{
+  float: left;
+  width: 60px;
+  height: 60px;
+  background: #2C3E50;
+}
+
+.twitter_icon {
+    position: relative;
+}
+ 
+.twitter_icon:before {
+    content: "\f099"; 
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+/*--adjust as necessary--*/
+    color: #3498DB;
+    font-size: 28px;
+    padding-left: 18px;
+    position: absolute;
+    top: 9px;
+    left: 0;
+}
+
+#social_icon3{
+  float: left;
+  width: 60px;
+  height: 60px;
+  background: #2C3E50;
+}
+
+.tumblr_icon {
+    position: relative;
+}
+ 
+.tumblr_icon:before {
+    content: "\f173"; 
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+/*--adjust as necessary--*/
+    color: #3498DB;
+    font-size: 28px;
+    padding-left: 20px;
+    position: absolute;
+    top: 8px;
+    left: 0;
+}
+
+/* `Nav links
+----------------------------------------------------------------------------------------------------*/
+
+#links{
+  height: 60px;
+}
+
+#links a{
+  float: right;
+  line-height: 60px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  margin-right: 37px;
+  color: #E74C3C;
+}
+
+/* `Footer
+----------------------------------------------------------------------------------------------------*/
+
+#footer .push {
+ height: 216px;
+}
+
+#footer{
+ background: #34495E;
+ margin-top: 24px;
+}
+
+.foot_buttons{
+  float: right;
+  margin-right: 10px;
+}
+
+#credits{
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #FFF;
+  line-height: 216px;
+}

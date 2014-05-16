@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<script src="http://platform.tumblr.com/v1/share.js"></script>
+
+<head>
+  <title>flipbook</title>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,200,900' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+<!-- Facebook integration. -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{1492301310990221}',
+      status     : true,
+      xfbml      : true
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<!-- Twitter integration. -->
+<script>
+  $('.popup').click(function(event) {
+    var width  = 575,
+        height = 400,
+        left   = ($(window).width()  - width)  / 2,
+        top    = ($(window).height() - height) / 2,
+        url    = this.href,
+        opts   = 'status=1' +
+                 ',width='  + width  +
+                 ',height=' + height +
+                 ',top='    + top    +
+                 ',left='   + left;
+
+    window.open(url, 'twitter', opts);
+
+    return false;
+  });
+</script>
+
+</head>
+
+<body>
+ 
+<% if current_user %>
+   <div id="navbar" class="container_12"> 
+      <div id="nav" class="grid_12 alpha omega">
+          <div id="social" class="grid_4 alpha">
+              <div id="flip_icon">
+                <%= link_to :root do %>
+                  <%= image_tag "flipbook60.jpg" %>
+                <% end %>
+              </div>
+
+              <div id="avatar">
+                <%= gravatar_tag User.find(session[:user_id]), :size => 60 %>
+              </div>  
+          </div>
+    
+          <div id="links" class="grid_4 omega push_4">
+              <%= link_to("Log Out", login_path(session[:user_id]), :method => :delete) %>
+              <%= link_to("Profile", user_url(current_user.id)) %> 
+          </div>
+      </div>
+  </div>
+<% end %>
+
+<div>
+  
+  <%= yield %> 
+  
+</div>
+
+<% if current_user %>
+  <footer class="container_12">
+    
+    <div id="footer" class="grid_12 alpha omega">
+      
+        <div id="foot_signup">
+        
+          <div id="foot_links" class="grid_4 push_8">
+            <div class="foot_buttons">
+              <div id="fb-root"></div>
+              <div id="social_icon3">
+                <a href="#" class="tumblr_icon"></a>
+              </div>
+              <div id="social_icon2">
+                <a href="#" class="twitter_icon"></a>
+              </div>
+              <div id="social_icon1">
+                <a href="#" class="facebook_icon"></a>
+              </div>
+        
+              <div id="flip_icon">
+                <%= link_to :root do %>
+                  <%= image_tag "flipbook60.jpg" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div id="credits" class="grid_12 alpha omega">
+          © 2014 flipbook, Inc. • Proudly built on the Silicon Prairie • Terms of service • Privacy Policy
+        </div>
+    </div>  
+  </footer>
+<% end %>
+
+</body> 
+
+</html>

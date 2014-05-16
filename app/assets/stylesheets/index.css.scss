@@ -1,0 +1,161 @@
+#banner{
+  background: #34495E;
+}
+
+/* `Name and tagline
+----------------------------------------------------------------------------------------------------*/
+
+#name{
+  height: 120px;
+  line-height: 600%;
+  font-family: 'Lato', sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: #ECF0F1;
+}
+
+#name span{
+  font-weight: 400;
+}
+
+.separator{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  width: 350px;
+  margin: 0 auto;
+}
+
+#tagline{
+  height: 60px;
+  line-height: 60px;
+  bottom: 0px;
+  font-family: 'Lato', sans-serif;
+  font-size: 36px;
+  font-weight: 100;
+  color: #ECF0F1;
+}
+
+.center{
+  text-align: center;
+}
+
+/* `Signup button
+----------------------------------------------------------------------------------------------------*/
+
+#signup_button1{
+  height: 84px;
+}
+
+.ctr_button{
+  display: block;
+  margin: 0 auto;
+  margin-top: 24px;
+  border: none;
+  height: 60px;
+  width: 300px;
+  background: #3498DB;
+  color: #2C3E50;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* `Graphic
+----------------------------------------------------------------------------------------------------*/
+
+//#hp_flipbook{
+//  height: 164px;
+//  padding-top: 12px;
+//}
+//
+
+#graphic{
+  background: #34495E;
+  padding-bottom: 24px;
+}
+
+
+#backdrop{
+  //width: 300px;
+//  height: 300px;
+  background: #2C3E50;
+}
+//
+//video{
+//  width: 140px;
+//  height: 140px;
+//}
+
+/* `Buffer
+----------------------------------------------------------------------------------------------------*/
+
+#buffer{
+  height: 192px;
+  line-height: 192px;
+  background: #E74C3C;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+#buff_text{
+  color: #2C3E50;
+}
+
+/* `Public flipbooks
+----------------------------------------------------------------------------------------------------*/
+
+#discover{
+  background: #FFF;
+  min-height: 1000px;
+}
+
+#public_fbs{
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+#public_fbs li{
+  list-style-type: none;
+  display: inline-block;
+  margin: 0 auto;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+#public_fbs a{
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+<%= form_for user do |f| %>
+  <!-- <% if @user.errors.any? %>
+    <div id="errors">
+      <% @user.errors.full_messages.each do |error_msg| %>
+        <li><%= error_msg %></li>
+      <% end %>
+    </div>
+  <% end %> -->
+
+  <div id="signup_form" class="grid_12 alpha omega">
+    <ul>
+      <li>
+          <%= f.text_field :name, :placeholder => "Name" %>
+      </li>
+  
+      <li>
+        <%= f.text_field :email, :placeholder => "Email" %>
+      </li>
+
+      <li>
+        <%= f.password_field :password, :placeholder => "Password" %>
+      </li>
+
+      <li>
+        <%= f.password_field :password_confirmation, :placeholder => "Confirm" %>
+      </li>
+    
+      <div id="main_button" class="grid_12 alpha omega">
+        <%= f.submit "Sign Up", :class => 'ctr_button' %>
+      </div>
+    </ul>
+  </div>
+<% end %>
+
+
+
+
+
+  
+
+
+
+

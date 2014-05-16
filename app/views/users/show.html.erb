@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="container" class="container_12">
+  
+  <div id="profile_banner" class="grid_12 alpha omega">
+      <div id="name" class="center">
+        <%= current_user.name %>
+      </div>
+      
+      <div class="separator"></div>
+      
+      <div id="tagline" class="center">
+        share what you make
+      </div>
+      
+      <div id="flipbook">
+        <%= render partial: "flipbks/form", locals: {book: @book, user: @user} %>
+      </div>
+  </div>
+  
+  <div id="buffer2" class="grid_12 alpha omega">
+      <% if !@user.flipbks.all.empty? %>
+        <div id="buff_text2">
+          YOUR FLIPBOOKS
+        </div>
+      <% else %>
+        <div id="buff_text2">
+          YOU NEED SOME FLIPBOOKS
+        </div>
+      <% end %>
+  </div>
+  
+  <div id="profile_flipbooks" class="grid_12 alpha omega">
+    
+      <div id="fbs_all">
+        <ul>
+          <% @user.flipbks.each do |book| %>
+        <li>
+          <% if book.photos.all.empty? %>
+            <%= link_to flipbk_path(book.id) do %>
+              <%= image_tag "placeholder.jpg" %>
+            <% end %>
+          <% else %>
+            <%= link_to flipbk_path(book.id) do %>
+              <%= image_tag book.photos.all.first.url %>
+            <% end %>
+          <% end %>
+        </li>
+          <% end %>
+        </ul>
+      </div>
+  </div>
+  
+  <div class="push"></div>
+      
+</div>
+
+</body>
+</html>
+
+
+
+
+
+

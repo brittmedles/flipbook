@@ -1,0 +1,78 @@
+<div id="flipbook_all">
+  <%= form_for book do |f| %>
+    <div id="flipbook_form" class="grid_12 alpha omega">
+    
+      <ul>
+        <%= f.hidden_field :user_id %>
+
+        <li>
+          <%= f.text_field :name, :placeholder => "Name" %>
+        </li>
+  
+        <li>
+          <%= f.text_field :description, :placeholder => "Describe" %>
+        </li>
+  
+        <li>
+          <% spd = book.speed || 200 %>
+          <%= f.text_field :speed , :placeholder => "How fast? (200)" %>
+        </li>
+  
+        <li>
+          <%= f.label "Make public?" %>
+          <%= f.check_box :public %>
+        </li>
+        
+        <% if (params[:action] == 'edit') %>
+          <div id="main_button" class="grid_12 alpha omega">
+            <%= f.submit "Save flipbook", :controller => :flipbks, :action => :show, :class => "ctr_button" %>
+          </div>
+        <% else %>
+          <div id="main_button" class="grid_12 alpha omega">
+            <%= f.submit "Start a flipbook", :controller => :flipbks, :action => :create, :class => "ctr_button" %>
+          </div> 
+        <% end %>
+      
+      </ul>
+    </div>
+  <% end %> 
+</div>
+  
+
+  
+  
+  <!-- contents, metadata = client.get_file_and_metadata('/magnum-opus.txt')
+  open('magnum-opus.txt', 'w') {|f| f.puts contents }
+  
+  # Upload the POST'd file to Dropbox, keeping the same name
+              resp = client.put_file(params[:file].original_filename, params[:file].read)
+              render :text => "Upload successful.  File now at #{resp['path']}"
+    <%= button_to "Add Photo", user_url(current_user.id), :method => :get, :class => "ctr_button" %>
+  
+  
+  
+  
+  <! <div id="insta_photos" class="grid_12 alpha omega">
+    <div id="photos">
+      <% User.find(session[:user_id]).photos.all.each do |p| %>
+        <div id="photos_new">
+          <label for="<%= p.id %>">
+            <%= image_tag(p.url, height: '140', width: '140') %>
+
+            <%= check_box_tag('photos[]', p.id, (((p.flipbk_id == book.id)&& p.flipbk_id != nil)? true : false), :id => "#{p.id}" ) %>
+
+            <% p.order = p.order || 0 %>
+            
+          </label>
+        </div>
+      <% end %>
+    </div>
+  </div>
+   -->
+
+  
+
+
+
+
+     

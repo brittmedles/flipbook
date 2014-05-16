@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="container" class="container_12">
+
+<% if !current_user %>  
+  <div id="nav" class="grid_12 alpha omega">
+      <div id="social" class="grid_4 alpha">
+          <div id="flip_icon">
+            <%= link_to :root do %>
+              <%= image_tag "flipbook60.jpg" %>
+            <% end %>
+          </div>
+     
+          <div id="fb-root"></div>
+          <div id="social_icon1">
+            <a href="#" class="facebook_icon"></a>
+          </div>
+          <div id="social_icon2">
+            <a href="#" class="twitter_icon"></a>
+          </div>
+          <div id="social_icon3">
+            <a href="#" class="tumblr_icon"></a>
+          </div>       
+      </div>
+  
+      <div id="links" class="grid_4 omega push_4">
+          <%= link_to("Log In", :new_login) %>
+      </div>
+  </div>
+<% end %>
+  
+  <div id="banner" class="grid_12 alpha omega">
+      <div id="name" class="center">
+        <span>flip</span>book
+      </div>
+      
+      <div class="separator"></div>
+      
+      <div id="tagline" class="center">
+        share what you make
+      </div>
+      
+      <div id="signup">
+        <%= render partial: "form", locals: {user: @user} %>
+      </div>
+  </div>  
+      
+  <div id="buffer" class="grid_12 alpha omega">
+      <div id="buff_text">
+        FLIP THRU
+      </div>
+  </div>
+  
+  <div id="discover" class="grid_12 alpha omega">
+      <div id="public_fbs">
+        <ul>
+        <% @public_flipbks.each do |f| %>
+          <li>
+            <a href="<%= flipbk_path(f.id) %>">
+              <img src="<%= f.photos.all.first.photo_url %>" width="300" height="300"></img>
+            </a>
+          </li>
+        <% end %>
+        </ul>
+      </div>
+  </div>
+  
+  <div class="push"></div>
+
+<% if !current_user %>  
+  <div id="footer" class="grid_12 alpha omega">
+      
+      <div id="foot_signup">
+        
+        <div id="foot_links" class="grid_4 push_8">
+          <div class="foot_buttons">
+            <div id="fb-root"></div>
+            <div id="social_icon3">
+              <a href="#" class="tumblr_icon"></a>
+            </div>
+            <div id="social_icon2">
+              <a href="#" class="twitter_icon"></a>
+            </div>
+            <div id="social_icon1">
+              <a href="#" class="facebook_icon"></a>
+            </div>
+        
+            <div id="flip_icon">
+              <%= link_to :root do %>
+                <%= image_tag "flipbook60.jpg" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        
+        <div id="signup" class="grid_4 alpha prefix_4">
+          <button type="button" class="ctr_button">Sign Up</button>
+        </div>
+
+      </div>
+      
+      <div id="credits" class="grid_12 alpha omega">
+        © 2014 flipbook, Inc. • Proudly built on the Silicon Prairie • Terms of service • Privacy Policy
+      </div>
+  </div>
+<% end %>
+  
+</div>
+  
+</body>
+</html>
+

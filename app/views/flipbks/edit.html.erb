@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="container" class="container_12">
+  
+  <div id="profile_banner" class="grid_12 alpha omega">
+      <div id="name" class="center">
+        <%= current_user.name %>
+      </div>
+      
+      <div class="separator"></div>
+      
+      <div id="tagline" class="center">
+        share what you make
+      </div>
+      
+      <div id="flipbook">
+        <%= render partial: "form", locals: {book: @book, user: @user} %>
+      </div>
+  </div>
+  
+  <div id="buffer2" class="grid_12 alpha omega">
+      <% if @photos == true %>
+        <div id="buff_text2">
+          FLIPBOOK PHOTOS
+        </div>
+      <% else %>
+        <div id="buff_text2">
+          Add photos to <%= @book.name %>
+        </div>
+      <% end %>
+  </div>
+  
+  <div id="uploader" class="grid_12 alpha omega">
+    
+    <!-- <% if @client == true %>
+    You are linked to Dropbox!
+    <% else %>
+    <%= button_to "Connect to Dropbox", :dbcheck, :method => :get, :class => "ctr_button" %>
+    <% end %>
+    
+    <%= render partial: "photos/form", locals: {book: @book, user: @user} %> -->
+    
+  </div>
+  
+  <div class="clear"></div>
+  
+  <div id="dropbox_photos" class="grid_12 alpha omega">
+   
+    Render all photos here.
+   
+  </div>
+  
+  <div class="push"></div>
+        
+</div>
+
+</body>
+</html>

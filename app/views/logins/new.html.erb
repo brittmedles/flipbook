@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+  
+<div id="container" class="container_12">
+
+  <div id="login_nav" class="grid_12 alpha omega">
+      <div id="social" class="grid_4 alpha">
+          <div id="flip_icon">
+            <%= link_to :root do %>
+              <%= image_tag "flipbook60.jpg" %>
+            <% end %>
+          </div>
+      </div>
+  </div>
+
+  <div id="login_banner" class="grid_12 alpha omega">
+    <div id="name_blk" class="grid_4 push_4">
+      <div id="name" class="center">
+        <span>flip</span>book
+      </div>
+
+      <div class="separator"></div>
+    </div>
+  
+    <div class="clear"></div>
+
+    <div id="login_form" class="grid_4 push_4">
+    
+        <!-- <% if @user %>
+         Username or password incorrect
+        <% end %> -->
+      
+        <%= form_tag logins_path do |f| %>
+
+        <div id="email">
+          <%= text_field_tag :email, nil, placeholder: "Email" %>
+        </div>
+
+        <div id-"password">
+          <%= password_field_tag :password, nil, placeholder: "Password" %>
+        </div>
+      
+        <div id="login">
+          <%= submit_tag "Log In", :class => 'ctr_button' %>
+        </div>
+        <% end %>
+   
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

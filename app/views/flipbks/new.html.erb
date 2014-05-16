@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="container" class="container_12">
+  
+  <div id="profile_banner" class="grid_12 alpha omega">
+      <div id="name" class="center">
+        <%= current_user.name %>
+      </div>
+      
+      <div class="separator"></div>
+      
+      <div id="tagline" class="center">
+        share what you make
+      </div>
+      
+      <div id="fb_menu">
+        
+        <%= button_to "Your flipbooks", user_url(current_user.id), :method => :get, :class => "ctr_button" %>
+                    
+      </div>
+  </div>
+  
+  <div id="flipbook">
+    <%= render partial: "form", locals: {book: @book} %>
+  </div>
+  
+  <div class="push"></div>
+        
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
